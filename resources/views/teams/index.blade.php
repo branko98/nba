@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    All posts
+    All teams
 @endsection
 
 @section('content')

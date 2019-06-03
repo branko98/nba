@@ -11,12 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/registration', 'RegistrationController@create');
+
+Route::post('/registration', 'RegistrationController@store')->name('registration');
+
+Route::get('/login', 'LoginController@create')->name('login');
+
+Route::post('/login', 'LoginController@store');
+
+Route::get('/logout', 'LoginController@destroy');
 
 Route::get('/', 'TeamsController@index');
 
 Route::get('/{id}', 'TeamsController@show');
 
 Route::get('player/{id}', 'PlayersController@show');
+

@@ -6,7 +6,13 @@
     <body>
         <div class="container">
                 @include('partials.header')
-
+                @if (!(Auth::check()))
+                    <a href="/login" class="ml-auto">Login</a>
+                    <a href="/register" class="ml-auto">Registrate</a>
+                @endif
+                @if (Auth::check())
+                    <a href="/logout" class="ml-auto">Log out</a>
+                @endif
             <div class="row">
                 <div class="col-sm-8 blog-main">
                     @yield('content')

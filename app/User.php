@@ -10,6 +10,12 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const STORE_RULES = [
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required | min:8'
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
