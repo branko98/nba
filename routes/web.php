@@ -12,7 +12,6 @@
 */
 
 
-
 Route::get('/registration', 'Auth\RegisterController@create');
 
 Route::post('/registration', 'Auth\RegisterController@store')->name('registration');
@@ -26,6 +25,8 @@ Route::get('/logout', 'Auth\LoginController@destroy');
 Route::get('/', 'TeamsController@index');
 
 Route::post('/{teamsId}/comments', 'CommentsController@store')->name('comments-team');
+
+Route::get('/forbbiden-comment', 'CommentsController@forbbiden')->name('forbbiden');
 
 Route::get('/{id}', 'TeamsController@show');
 
