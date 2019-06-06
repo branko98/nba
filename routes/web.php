@@ -13,15 +13,15 @@
 
 
 
-Route::get('/registration', 'RegistrationController@create');
+Route::get('/registration', 'Auth\RegisterController@create');
 
-Route::post('/registration', 'RegistrationController@store')->name('registration');
+Route::post('/registration', 'Auth\RegisterController@store')->name('registration');
 
-Route::get('/login', 'LoginController@create')->name('login');
+Route::get('/login', 'Auth\LoginController@create')->name('login');
 
-Route::post('/login', 'LoginController@store');
+Route::post('/login', 'Auth\LoginController@store');
 
-Route::get('/logout', 'LoginController@destroy');
+Route::get('/logout', 'Auth\LoginController@destroy');
 
 Route::get('/', 'TeamsController@index');
 
@@ -31,3 +31,4 @@ Route::get('/{id}', 'TeamsController@show');
 
 Route::get('player/{id}', 'PlayersController@show');
 
+Auth::routes(['verify' => true]);
