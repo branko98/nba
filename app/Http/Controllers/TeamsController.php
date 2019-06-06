@@ -21,7 +21,7 @@ class TeamsController extends Controller
 
     public function show($id)
     {
-        $team = Team::with('players')->find($id);
+        $team = Team::with('players')->with('comments')->find($id);
 
         return view('teams.show', compact('team'));
     }

@@ -25,6 +25,8 @@ Route::get('/logout', 'LoginController@destroy');
 
 Route::get('/', 'TeamsController@index');
 
+Route::post('/{teamsId}/comments', 'CommentsController@store')->name('comments-team');
+
 Route::get('/{id}', 'TeamsController@show');
 
 Route::get('player/{id}', 'PlayersController@show');
